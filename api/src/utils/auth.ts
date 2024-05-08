@@ -1,5 +1,5 @@
-import { GQL_SERVER_URL } from "lib/config";
-import { fetcher, postData } from "utils";
+import { GQL_SERVER_URL } from "../lib/config";
+import { fetcher, postData } from "../utils";
 
 export const verifyToken = async (token: string) => {
   const decoded = await fetcher(`${GQL_SERVER_URL}/auth/verify`, {

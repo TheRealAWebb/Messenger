@@ -1,9 +1,9 @@
 import express from "express";
-import { CREATE_DETAIL, CREATE_DIRECT, UPDATE_DIRECT } from "graphql/mutations";
-import { GET_DIRECT, GET_WORKSPACE, LIST_DIRECTS } from "graphql/queries";
-import { sha256, timeDiff } from "utils";
-import { arrayRemove, arrayUnion } from "utils/array-helpers";
-import graphQLClient from "utils/graphql";
+import { CREATE_DETAIL, CREATE_DIRECT, UPDATE_DIRECT } from "../graphql/mutations";
+import { GET_DIRECT, GET_WORKSPACE, LIST_DIRECTS } from "../graphql/queries";
+import { sha256, timeDiff } from "../utils";
+import { arrayRemove, arrayUnion } from "../utils/array-helpers";
+import graphQLClient from "../utils/graphql";
 import { v4 as uuidv4 } from "uuid";
 
 export const createDirect = async (

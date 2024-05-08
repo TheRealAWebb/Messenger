@@ -1,16 +1,16 @@
-import { USER_PHOTO_MAX_WIDTH, USER_THUMBNAIL_WIDTH } from "config";
-import { createOrUpdateDetails } from "controllers/channels";
+import { USER_PHOTO_MAX_WIDTH, USER_THUMBNAIL_WIDTH } from "../config";
+import { createOrUpdateDetails } from "../controllers/channels";
 import express from "express";
 import {
   CREATE_PRESENCE,
   CREATE_USER,
   UPDATE_PRESENCE,
   UPDATE_USER,
-} from "graphql/mutations";
-import { GET_CHANNEL, GET_DIRECT, GET_PRESENCE } from "graphql/queries";
-import { createGQLUser } from "utils/auth";
-import graphQLClient from "utils/graphql";
-import { getFileMetadata, saveImageThumbnail } from "utils/storage";
+} from "../graphql/mutations";
+import { GET_CHANNEL, GET_DIRECT, GET_PRESENCE } from "../graphql/queries";
+import { createGQLUser } from "../utils/auth";
+import graphQLClient from "../utils/graphql";
+import { getFileMetadata, saveImageThumbnail } from "../utils/storage";
 
 export const createUser = async (
   req: express.Request,

@@ -1,4 +1,4 @@
-import { WORKSPACE_PHOTO_MAX_WIDTH, WORKSPACE_THUMBNAIL_WIDTH } from "config";
+import { WORKSPACE_PHOTO_MAX_WIDTH, WORKSPACE_THUMBNAIL_WIDTH } from "../config";
 import express from "express";
 import {
   CREATE_CHANNEL,
@@ -9,7 +9,7 @@ import {
   UPDATE_DIRECT,
   UPDATE_USER,
   UPDATE_WORKSPACE,
-} from "graphql/mutations";
+} from "../graphql/mutations";
 import {
   GET_CHANNEL,
   GET_USER,
@@ -17,11 +17,11 @@ import {
   LIST_CHANNELS,
   LIST_DIRECTS,
   LIST_USERS,
-} from "graphql/queries";
-import { sha256 } from "utils";
-import { arrayRemove, arrayUnion } from "utils/array-helpers";
-import graphQLClient from "utils/graphql";
-import { getFileMetadata, saveImageThumbnail } from "utils/storage";
+} from "../graphql/queries";
+import { sha256 } from "../utils";
+import { arrayRemove, arrayUnion } from "../utils/array-helpers";
+import graphQLClient from "../utils/graphql";
+import { getFileMetadata, saveImageThumbnail } from "../utils/storage";
 import { v4 as uuidv4 } from "uuid";
 
 export const createWorkspace = async (

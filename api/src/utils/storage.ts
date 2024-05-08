@@ -1,13 +1,13 @@
 import AWS from "aws-sdk";
 import axios from "axios";
-import { MAX_FILE_SIZE_MB } from "config";
+import { MAX_FILE_SIZE_MB } from "../config";
 import ffmpeg_static from "ffmpeg-static";
 import ffprobe from "ffprobe-static";
 import ffmpeg from "fluent-ffmpeg";
 import FormData from "form-data";
 import fs from "fs";
 import sizeOf from "image-size";
-import { GQL_SERVER_URL } from "lib/config";
+import { GQL_SERVER_URL } from "../lib/config";
 import os from "os";
 import path from "path";
 import sharp from "sharp";
@@ -33,7 +33,7 @@ const getMediaType = (metadata: any) => {
 const ffmpegSync = (originalFile: any, modifiedFile: any) => {
   return new Promise((resolve: any, reject) => {
     ffmpeg(originalFile)
-      .setFfmpegPath(ffmpeg_static)
+      .setFfmpegPath(ffmpeg_static as string)
       .screenshot(
         {
           timemarks: [1],

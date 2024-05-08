@@ -4,17 +4,17 @@ import {
   CREATE_DETAIL,
   UPDATE_CHANNEL,
   UPDATE_DETAIL,
-} from "graphql/mutations";
+} from "../graphql/mutations";
 import {
   GET_CHANNEL,
   GET_DETAIL,
   GET_USER,
   GET_WORKSPACE,
   LIST_CHANNELS,
-} from "graphql/queries";
-import { sha256, timeDiff } from "utils";
-import { arrayRemove, arrayUnion } from "utils/array-helpers";
-import graphQLClient from "utils/graphql";
+} from "../graphql/queries";
+import { sha256, timeDiff } from "../utils";
+import { arrayRemove, arrayUnion } from "../utils/array-helpers";
+import graphQLClient from "../utils/graphql";
 import { v4 as uuidv4 } from "uuid";
 
 export async function createOrUpdateDetails({

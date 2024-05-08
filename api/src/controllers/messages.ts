@@ -1,4 +1,4 @@
-import { MESSAGE_THUMBNAIL_WIDTH } from "config";
+import { MESSAGE_THUMBNAIL_WIDTH } from "../config";
 import express from "express";
 import {
   CREATE_DETAIL,
@@ -9,7 +9,7 @@ import {
   UPDATE_DIRECT,
   UPDATE_MESSAGE,
   UPDATE_REACTION
-} from "graphql/mutations";
+} from "../graphql/mutations";
 import {
   GET_CHANNEL,
   GET_DETAIL,
@@ -17,11 +17,11 @@ import {
   GET_MESSAGE,
   GET_REACTION,
   LIST_MESSAGES
-} from "graphql/queries";
-import { getMessageType, lastMessageTextGenerator, sha256 } from "utils";
-import { arrayRemove } from "utils/array-helpers";
-import graphQLClient from "utils/graphql";
-import { getFileMetadata, saveImageThumbnail } from "utils/storage";
+} from "../graphql/queries";
+import { getMessageType, lastMessageTextGenerator, sha256 } from "../utils";
+import { arrayRemove } from "../utils/array-helpers";
+import graphQLClient from "../utils/graphql";
+import { getFileMetadata, saveImageThumbnail } from "../utils/storage";
 import { v4 as uuidv4 } from "uuid";
 
 export const createMessage = async (

@@ -1,11 +1,11 @@
-import * as channels from "controllers/channels";
-import * as directs from "controllers/directs";
-import * as messages from "controllers/messages";
-import * as users from "controllers/users";
-import * as workspaces from "controllers/workspaces";
+import * as channels from "./controllers/channels";
+import * as directs from "./controllers/directs";
+import * as messages from "./controllers/messages";
+import * as users from "./controllers/users";
+import * as workspaces from "./controllers/workspaces";
 import cors from "cors";
 import express from "express";
-import { verifyToken } from "utils/auth";
+import { verifyToken } from "./utils/auth";
 
 const app = express();
 
